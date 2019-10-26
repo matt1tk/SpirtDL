@@ -95,7 +95,7 @@ namespace Spirthack
 
         private void Button_Click_5(object sender, RoutedEventArgs e) //check for updates button
         {
-            System.Diagnostics.Process.Start("http://matt1.tk/SpirtDL.html"); //this just opens my website to the SpirtDL page, in the future I may add a built in update function
+            System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL"); //this just opens my website to the SpirtDL page, in the future I may add a built in update function
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e) //pause button (these are all out of order i know)
