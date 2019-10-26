@@ -1,7 +1,7 @@
 # Spirthack
 SpirtDL - the open source C# spirthack loader
 
-https://i.imgur.com/uQe597K.png
+![SpirtDL menu](https://i.imgur.com/uQe597K.png)
 
  Want to donate? Buy me a spirthack sub ;)
 
