@@ -1,6 +1,8 @@
 # Spirthack
 SpirtDL - the open source C# spirthack loader
 
+https://i.imgur.com/uQe597K.png
+
  Want to donate? Buy me a spirthack sub ;)
 
 SpirtDL is a very simple loader for Spirthack that gets around having to go to the site every time (since the loader deletes itself out of safety). 
