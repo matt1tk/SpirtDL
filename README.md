@@ -4,6 +4,10 @@ SpirtDL - the open source C# spirthack loader
 ![SpirtDL menu](https://i.imgur.com/uQe597K.png)
 
  Want to donate? Buy me a spirthack sub ;)
+ 
+ # Roadmap
+ Adding auto run on launch as an option (so you don't have to click run)
+ UI 
 
 SpirtDL is a very simple loader for Spirthack that gets around having to go to the site every time (since the loader deletes itself out of safety). 
 
