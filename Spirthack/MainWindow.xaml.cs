@@ -18,11 +18,12 @@ namespace Spirthack
         public MainWindow() //this is just the main window
         {
             InitializeComponent();
+            File.Delete(@"C:\SpirtDL\myfile.exe"); //delete any old versions of the loader 
             Directory.CreateDirectory("c:\\SpirtDL");
             WebClient webClient = new WebClient();
-            webClient.DownloadFile("https://files.catbox.moe/68eig5.mp3", @"c:\SpirtDL\thesearch.mp3");   //download music to folder
+            webClient.DownloadFile("https://files.catbox.moe/68eig5.mp3", @"c:\SpirtDL\thesearch.mp3");   //download song (NF - The Search (edit)) to folder
             webClient.Dispose();
-            string url = @"c:\SpirtDL\thesearch.mp3";  //load music 
+            string url = @"c:\SpirtDL\thesearch.mp3";  //set music path
 
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
@@ -30,16 +31,16 @@ namespace Spirthack
             string localversion = "1";          //sets local version first
             WebClient client = new WebClient(); //new web client
             string onlineversion = client.DownloadString("http://matt1.tk/spirtdlver.html"); //checks my site for the current version
-            //below: if online version doesn't equal local version, open github page
+            
 
             int stringcheck = 0;
 
             stringcheck = string.Compare(localversion, onlineversion);
             
 
-            if (stringcheck != 0)
+            if (stringcheck != 0) //If there is a newer version, open github to the releases tab
             {
-                System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL");
+                System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL/releases");
             }
         }
 
