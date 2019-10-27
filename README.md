@@ -1,4 +1,4 @@
-# Spirthack
+# SpirtDL
 SpirtDL - the open source C# spirthack loader
 
 ![SpirtDL menu](https://i.imgur.com/uQe597K.png)
