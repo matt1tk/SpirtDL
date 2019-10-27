@@ -71,7 +71,7 @@ namespace Spirthack
             webClient.Dispose();                                                                   //delete the web client
             mediaPlayer.Stop();                                                                    //stop the music if it is running (clean up)
 
-            System.Environment.Exit(0);                                                            //close program 
+            //System.Environment.Exit(0);                                                            //close program //Commented out so that the "Run CS:GO" button works
 
 
         }
@@ -103,6 +103,13 @@ namespace Spirthack
 
 
             mediaPlayer.Pause(); //pause
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://rungameid/730"); //launch CS:GO
+            System.Environment.Exit(0);  //end process
+
         }
     }
 }

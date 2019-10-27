@@ -10,12 +10,13 @@
 
         <Button Content="Download and Run" HorizontalAlignment="Left" Width="166" Margin="133,68,0,0" Height="20" VerticalAlignment="Top" FontFamily="Verdana" Click="Button_Click_1" Background="#FFBCD979" />
         <Label Content="SpirtDL &#xA; by matt1.tk / throwaway27727394927&#xA;current version: 1.1" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="71,10,0,0" Height="61" FontFamily="Verdana" FontWeight="Thin" TextOptions.TextHintingMode="Animated" HorizontalAlignment="Left" FontStyle="Italic" Width="290" Opacity="0.785"/>
-        <Button Content="Visit my site" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,93,0,0" FontFamily="Verdana" Height="21" Click="Button_Click_2" Background="#FF89BBFE"/>
-        <Button Content="Copy my Discord ID" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,120,0,0" FontFamily="Verdana" Click="Button_Click" Background="#FF6582BF" Height="19"/>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="143,192,0,0" VerticalAlignment="Top" Width="143" FontFamily="Verdana" Click="Button_Click_3" Background="#FFBF6565" Height="19"/>
-        <Button Content="Info page" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,143,0,0" FontFamily="Verdana" Height="19" Background="#FF3DAABB" Click="Button_Click_5"/>
-        <Button Content="Play" HorizontalAlignment="Left" Margin="143,167,0,0" VerticalAlignment="Top" Width="68" FontFamily="Verdana" Background="#FFA863A8" Click="Button_Click_4"/>
-        <Button Content="Pause" HorizontalAlignment="Left" Margin="216,167,0,0" VerticalAlignment="Top" Width="70" Background="#FFA862A8" FontFamily="Verdana" Height="19" Click="Button_Click_6"/>
+        <Button Content="Visit my site" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,119,0,0" FontFamily="Verdana" Height="21" Click="Button_Click_2" Background="#FF89BBFE"/>
+        <Button Content="Copy my Discord ID" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,146,0,0" FontFamily="Verdana" Click="Button_Click" Background="#FF6582BF" Height="19"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="143,218,0,0" VerticalAlignment="Top" Width="143" FontFamily="Verdana" Click="Button_Click_3" Background="#FFBF6565" Height="19"/>
+        <Button Content="Info page" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="143,169,0,0" FontFamily="Verdana" Height="19" Background="#FF3DAABB" Click="Button_Click_5"/>
+        <Button Content="Play" HorizontalAlignment="Left" Margin="143,193,0,0" VerticalAlignment="Top" Width="68" FontFamily="Verdana" Background="#FFA863A8" Click="Button_Click_4"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="216,193,0,0" VerticalAlignment="Top" Width="70" Background="#FFA862A8" FontFamily="Verdana" Height="19" Click="Button_Click_6"/>
+        <Button Content="Run CS:GO" HorizontalAlignment="Left" Margin="143,93,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click_7" FontFamily="Verdana" Background="BurlyWood"/>
 
     </Grid>
 </Window>
