@@ -69,9 +69,9 @@ namespace Spirthack
             webClient.DownloadFile("https://spirthack.me/api/getinj", @"c:\SpirtDL\myfile.exe");   //download the injector (from the site), put it in c folder as myfile.exe
             System.Diagnostics.Process.Start(@"c:\SpirtDL\myfile.exe");                            //run the exe
             webClient.Dispose();                                                                   //delete the web client
-            mediaPlayer.Stop();                                                                    //stop the music if it is running (clean up)
+            //mediaPlayer.Stop();           //commented out so music continues when you click run  //stop the music if it is running (clean up)
 
-            //System.Environment.Exit(0);                                                            //close program //Commented out so that the "Run CS:GO" button works
+            //System.Environment.Exit(0);                                                          //close program //Commented out so that the "Run CS:GO" button works
 
 
         }
@@ -108,6 +108,7 @@ namespace Spirthack
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("steam://rungameid/730"); //launch CS:GO
+            mediaPlayer.Stop(); //stop music (cleanup)
             System.Environment.Exit(0);  //end process
 
         }
