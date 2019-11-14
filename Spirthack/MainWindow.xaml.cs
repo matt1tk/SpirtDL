@@ -24,7 +24,7 @@ namespace Spirthack
             if (!File.Exists(url))
             {
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://files.catbox.moe/68eig5.mp3", @"c:\SpirtDL\thesearch.mp3");   //download song (NF - The Search (edit)) to folder
+                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", @"c:\SpirtDL\thesearch.mp3");   //download song (NF - The Search (edit)) to folder
                 webClient.Dispose();
             }
             
