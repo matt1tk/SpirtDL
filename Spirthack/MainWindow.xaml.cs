@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
@@ -18,13 +19,17 @@ namespace Spirthack
         public MainWindow() //this is just the main window
         {
             InitializeComponent();
+            foreach (var process in Process.GetProcessesByName("Steam")) //closes steam!
+            {
+                process.Kill();
+            }
             File.Delete(@"C:\SpirtDL\myfile.exe"); //delete any old versions of the loader 
             Directory.CreateDirectory("c:\\SpirtDL");
-            string url = @"c:\SpirtDL\thesearch.mp3";  //set music path
+            string url = @"c:\SpirtDL\song.mp3";  //set music path
             if (!File.Exists(url))
             {
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", @"c:\SpirtDL\thesearch.mp3");   //download song (NF - The Search (edit)) to folder
+                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", @"c:\SpirtDL\song.mp3");   //download song to folder
                 webClient.Dispose();
             }
             
@@ -32,7 +37,7 @@ namespace Spirthack
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
 
-            string localversion = "1.3";          //sets local version first
+            string localversion = "1.4";          //sets local version first
             WebClient client = new WebClient(); //new web client
             string onlineversion = client.DownloadString("http://matt1.tk/spirtdlver.html"); //checks my site for the current version
             
