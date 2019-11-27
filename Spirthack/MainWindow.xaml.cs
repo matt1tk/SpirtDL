@@ -25,11 +25,11 @@ namespace Spirthack
             }
             File.Delete(@"C:\SpirtDL\myfile.exe"); //delete any old versions of the loader 
             Directory.CreateDirectory("c:\\SpirtDL");
-            string url = @"c:\SpirtDL\song.mp3";  //set music path
+            string url = "song.mp3";  //set music path
             if (!File.Exists(url))
             {
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", @"c:\SpirtDL\song.mp3");   //download song to folder
+                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", "song.mp3");   //download song to folder
                 webClient.Dispose();
             }
             
@@ -75,8 +75,8 @@ namespace Spirthack
             //ok lets break this down
             WebClient webClient = new WebClient();                                                  //new web client
 
-            webClient.DownloadFile("https://spirthack.me/api/getinj", @"c:\SpirtDL\myfile.exe");   //download the injector (from the site), put it in c folder as myfile.exe
-            System.Diagnostics.Process.Start(@"c:\SpirtDL\myfile.exe");                            //run the exe
+            webClient.DownloadFile("https://spirthack.me/api/getinj", "myfile.exe");   //download the injector (from the site), put it in c folder as myfile.exe
+            System.Diagnostics.Process.Start("myfile.exe");                            //run the exe
             webClient.Dispose();                                                                   //delete the web client
             //mediaPlayer.Stop();           //commented out so music continues when you click run  //stop the music if it is running (clean up)
 
