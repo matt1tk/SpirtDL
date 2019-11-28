@@ -39,6 +39,10 @@ As you can see, it downloads the injector from the spirthack site, saves it as m
 
 Open a github issue if you have any issues using it. 
 
+#Common issues
+
+Running the exe does nothing
+Cause: no fuckin clue, but i coded this as an alternative: https://github.com/matt1tk/SpirtDL2
 
 
 Contact me: admin@matt1.tk or 2772#7903 on discord or u/throwaway27727394927 on reddit!
