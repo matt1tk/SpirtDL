@@ -7,6 +7,7 @@ SpirtDL - the open source C# spirthack loader
  
  # Roadmap
  Adding auto run on launch as an option (so you don't have to click run)
+ If you really want a one click solution without clicking "download and run", ![SpirtDL2](https://github.com/matt1tk/SpirtDL2) can do this.
  UI 
 
 SpirtDL is a very simple loader for Spirthack that gets around having to go to the site every time (since the loader deletes itself out of safety). 
