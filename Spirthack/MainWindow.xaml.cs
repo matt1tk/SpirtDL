@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -32,21 +33,16 @@ namespace Spirthack
                 webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", "song.mp3");   //download song to folder
                 webClient.Dispose();
             }
-            
+
 
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
 
-            string localversion = "1.4";          //sets local version first
+            string localversion = "1.5";          //sets local version first
             WebClient client = new WebClient(); //new web client
             string onlineversion = client.DownloadString("http://matt1.tk/spirtdlver.html"); //checks my site for the current version
-            
 
-            int stringcheck = 0;
-
-            stringcheck = string.Compare(localversion, onlineversion);
-            
-
+            int stringcheck = string.Compare(localversion, onlineversion);
             if (stringcheck != 0) //If there is a newer version, open github to the releases tab
             {
                 System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL/releases");
@@ -72,19 +68,32 @@ namespace Spirthack
         private void Button_Click_1(object sender, RoutedEventArgs e) //this is the download and run button. read through this if you want to see if it's safe (hint: it is)
         {
 
-            //ok lets break this down
-            WebClient webClient = new WebClient();                                                  //new web client
+            downloadLoader();
+        }
+        private void downloadLoader()
+        {
+            string url = "https://spirthack.me/api/getinj";
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(delegate (object sender, DownloadProgressChangedEventArgs e)
+                {
+                    Console.WriteLine("Downloaded:" + e.ProgressPercentage.ToString());
+                    pBar1.Value = e.ProgressPercentage;
+                });
 
-            webClient.DownloadFile("https://spirthack.me/api/getinj", "myfile.exe");   //download the injector (from the site), put it in c folder as myfile.exe
-            System.Diagnostics.Process.Start("myfile.exe");                            //run the exe
-            webClient.Dispose();                                                                   //delete the web client
-            //mediaPlayer.Stop();           //commented out so music continues when you click run  //stop the music if it is running (clean up)
-
-            //System.Environment.Exit(0);                                                          //close program //Commented out so that the "Run CS:GO" button works
-
+                webClient.DownloadFileCompleted += new AsyncCompletedEventHandler
+                    (delegate (object sender, AsyncCompletedEventArgs e)
+                    {
+                        if (e.Error == null && !e.Cancelled)
+                        {
+                            Console.WriteLine("Spirthack download completed!");
+                            Process.Start("myfile");
+                        }
+                    });
+                webClient.DownloadFileAsync(new Uri(url), "myfile.exe");
+            }
 
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e) // this is the open my site button
         {
             System.Diagnostics.Process.Start("http://matt1.tk"); //open my site when the button is clicked
@@ -123,4 +132,3 @@ namespace Spirthack
         }
     }
 }
-
