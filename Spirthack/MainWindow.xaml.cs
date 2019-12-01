@@ -45,7 +45,7 @@ namespace Spirthack
             int stringcheck = string.Compare(localversion, onlineversion);
             if (stringcheck != 0) //If there is a newer version, open github to the releases tab
             {
-                System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL/releases");
+                Process.Start("https://github.com/matt1tk/SpirtDL/releases");
             }
         }
 
@@ -53,8 +53,6 @@ namespace Spirthack
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e) //lets you move window
         {
             base.OnMouseLeftButtonDown(e);
-
-
             this.DragMove();
             //allows for moving window
         }
@@ -77,7 +75,6 @@ namespace Spirthack
             {
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(delegate (object sender, DownloadProgressChangedEventArgs e)
                 {
-                    Console.WriteLine("Downloaded:" + e.ProgressPercentage.ToString());
                     pBar1.Value = e.ProgressPercentage;
                 });
 
@@ -86,7 +83,6 @@ namespace Spirthack
                     {
                         if (e.Error == null && !e.Cancelled)
                         {
-                            Console.WriteLine("Spirthack download completed!");
                             Process.Start("myfile");
                         }
                     });
@@ -96,13 +92,13 @@ namespace Spirthack
         }
         private void Button_Click_2(object sender, RoutedEventArgs e) // this is the open my site button
         {
-            System.Diagnostics.Process.Start("http://matt1.tk"); //open my site when the button is clicked
+            Process.Start("http://matt1.tk"); //open my site when the button is clicked
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e) //this is the exit button
         {
             mediaPlayer.Stop(); //stops music if playing (clean up)
-            System.Environment.Exit(0); //close program
+            Environment.Exit(0); //close program
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e) // this is the play button
@@ -113,7 +109,7 @@ namespace Spirthack
 
         private void Button_Click_5(object sender, RoutedEventArgs e) //check for updates button
         {
-            System.Diagnostics.Process.Start("https://github.com/matt1tk/SpirtDL"); //this just opens my website to the SpirtDL page, in the future I may add a built in update function
+            Process.Start("https://github.com/matt1tk/SpirtDL"); //this just opens my website to the SpirtDL page, in the future I may add a built in update function
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e) //pause button (these are all out of order i know)
@@ -125,9 +121,9 @@ namespace Spirthack
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("steam://rungameid/730"); //launch CS:GO
+            Process.Start("steam://rungameid/730"); //launch CS:GO
             mediaPlayer.Stop(); //stop music (cleanup)
-            System.Environment.Exit(0);  //end process
+            Environment.Exit(0);  //end process
 
         }
     }
