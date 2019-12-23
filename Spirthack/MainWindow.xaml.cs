@@ -29,9 +29,24 @@ namespace Spirthack
             string url = "song.mp3";  //set music path
             if (!File.Exists(url))
             {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile("https://files.catbox.moe/mj3tab.flac", "song.mp3");   //download song to folder
-                webClient.Dispose();
+                string url2 = "https://files.catbox.moe/mj3tab.flac";
+                using (WebClient webClient = new WebClient())
+                {
+                    webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(delegate (object sender, DownloadProgressChangedEventArgs e)
+                    {
+                        pBar1.Value = e.ProgressPercentage;
+                    });
+
+                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler
+                        (delegate (object sender, AsyncCompletedEventArgs e)
+                        {
+                            if (e.Error == null && !e.Cancelled)
+                            {
+                                
+                            }
+                        });
+                    webClient.DownloadFileAsync(new Uri(url2), "song.mp3");
+                }
             }
 
 
