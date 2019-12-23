@@ -38,9 +38,9 @@ namespace Spirthack
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
 
-            string localversion = "1.5";          //sets local version first
+            string localversion = "1.6";          //sets local version first
             WebClient client = new WebClient(); //new web client
-            string onlineversion = client.DownloadString("http://matt1.tk/np/spirtdlver.html"); //checks my site for the current version
+            string onlineversion = client.DownloadString("https://raw.githubusercontent.com/matt1tk/SpirtDL/master/latest.txt"); //checks my site for the current version
 
             int stringcheck = string.Compare(localversion, onlineversion);
             if (stringcheck != 0) //If there is a newer version, open github to the releases tab
