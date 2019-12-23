@@ -15,8 +15,6 @@ namespace Spirthack
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MediaPlayer mediaPlayer;
-
         public MainWindow() //this is just the main window
         {
             InitializeComponent();
@@ -29,7 +27,7 @@ namespace Spirthack
             string url = "song.mp3";  //set music path
             if (!File.Exists(url))
             {
-                string url2 = "https://files.catbox.moe/mj3tab.flac";
+                string url2 = "https://files.catbox.moe/qvdhst.wav";
                 using (WebClient webClient = new WebClient())
                 {
                     webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(delegate (object sender, DownloadProgressChangedEventArgs e)
@@ -45,13 +43,13 @@ namespace Spirthack
                                 
                             }
                         });
-                    webClient.DownloadFileAsync(new Uri(url2), "song.mp3");
+                    webClient.DownloadFileAsync(new Uri(url2), "song.wav");
                 }
             }
 
 
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
+            MediaPlayer = new MediaPlayer();
+            MediaPlayer.Open(new Uri(url, UriKind.Relative)); //open the music player with the url
 
             string localversion = "1.6";          //sets local version first
             WebClient client = new WebClient(); //new web client
@@ -109,17 +107,19 @@ namespace Spirthack
         {
             Process.Start("http://matt1.tk"); //open my site when the button is clicked
         }
-
+        public MediaPlayer MediaPlayer;
         private void Button_Click_3(object sender, RoutedEventArgs e) //this is the exit button
         {
-            mediaPlayer.Stop(); //stops music if playing (clean up)
+            MediaPlayer.Stop(); //stops music if playing (clean up)
             Environment.Exit(0); //close program
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e) // this is the play button
         {
 
-            mediaPlayer.Play(); //play (duh)
+            MediaPlayer = new MediaPlayer();
+            MediaPlayer.Open(new Uri("song.wav", UriKind.Relative));
+            MediaPlayer.Play();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e) //check for updates button
@@ -131,15 +131,15 @@ namespace Spirthack
         {
 
 
-            mediaPlayer.Pause(); //pause
+            MediaPlayer.Pause(); //pause
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             Process.Start("steam://rungameid/730"); //launch CS:GO
-            mediaPlayer.Stop(); //stop music (cleanup)
+            MediaPlayer.Stop(); //stop music (cleanup)
             Environment.Exit(0);  //end process
-
+            
         }
     }
 }
